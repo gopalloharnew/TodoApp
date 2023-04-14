@@ -8,5 +8,44 @@
     <link rel="stylesheet" href="css/style.css" />
     <script src="js/script.js" type="module"></script>
   </head>
-  <body></body>
+  <body>
+    <div id="app">
+      <header><h1>Todo App</h1></header>
+      <main>
+        <div class="form-wraper">
+          <form class="todo-form">
+            <input type="text" id="todoInput" class="todo-input" />
+            <button type="submit" class="todo-submit-button">Add Todo</button>
+          </form>
+        </div>
+        <div class="list-wraper">
+          <div class="todo-details">done 0 pending 0</div>
+          <ul class="todo-wraper">
+            <li class="todo">
+              <button class="todo-checkbox"></button>
+              <div class="todo-content">Hello World</div>
+              <div class="action-button-wraper">
+                <button class="edit-todo-button">Edit</button>
+                <button class="delete-todo button">Delete</button>
+              </div>
+            </li>
+            <li class="todo done">
+              <button class="todo-checkbox"></button>
+              <div class="todo-content">Hello World2</div>
+              <div class="action-button-wraper">
+                <button class="edit-todo-button">Edit</button>
+                <button class="delete-todo button">Delete</button>
+              </div>
+            </li>
+          </ul>
+          <div class="list-action-button-wraper">
+            <button class="clear-all-todo-button">Clear All</button>
+            <button class="clear-done-todo-button">Clear Done</button>
+            <button class="clear-pending-todo-button">Clear Pending</button>
+          </div>
+        </div>
+      </main>
+      <footer></footer>
+    </div>
+  </body>
 </html>
