@@ -1,0 +1,99 @@
+.todo {
+  display: flex;
+  align-items: center;
+  border-radius: var(--radius-400);
+  box-shadow: var(--shadow);
+  width: 100%;
+  background-color: var(--bg-400);
+  position: absolute;
+  top: var(--top);
+}
+
+/* checkbox */
+.todo-checkbox-button {
+  font: inherit;
+  border: 1px solid transparent;
+  outline: none;
+  transition: border-color 0.15s ease-in-out;
+  cursor: pointer;
+  height: var(--height-400);
+  width: var(--height-400);
+  flex-shrink: 0;
+  background-color: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  position: relative;
+}
+
+.todo-checkbox-button:hover {
+  background-color: inherit;
+}
+
+.todo-checkbox-button::before {
+  content: "";
+  width: 40%;
+  height: 40%;
+  border: 0.15rem solid var(--accent-400);
+  border-radius: 100%;
+  transition: var(--transition);
+}
+
+.done .todo-checkbox-button::before {
+  width: 24%;
+  height: 50%;
+  border-radius: 35%;
+  border-color: transparent var(--accent-400) var(--accent-400) transparent;
+  transform: rotate(45deg) translate(-0.25rem, -0.25rem);
+}
+
+/* content */
+.todo-content {
+  margin-right: auto;
+  padding: var(--spacing-400);
+  word-break: break-all;
+  border: 1px solid transparent;
+  outline: none;
+  transition: border-color var(--transition) ease-in-out;
+  position: relative;
+}
+
+.todo-content:focus-visible {
+  border-color: var(--accent-400);
+}
+
+.todo-content::after {
+  content: "";
+  height: 0.15rem;
+  width: 0;
+  position: absolute;
+  top: 1.15rem;
+  left: var(--spacing-400);
+  background-color: currentColor;
+  transition: width var(--transition);
+}
+
+.done .todo-content {
+  font-style: italic;
+}
+
+.done .todo-content::after {
+  width: calc(100% - (2 * var(--spacing-400)));
+}
+
+/* action-buttons */
+.todo-action-button-wraper {
+  display: flex;
+  gap: var(--spacing-400);
+  padding: var(--spacing-400);
+}
+
+.edit-todo-button {
+  transition: opacity var(--transition);
+}
+
+.done .edit-todo-button {
+  opacity: 0;
+  pointer-events: none;
+}

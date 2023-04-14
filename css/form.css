@@ -1,0 +1,48 @@
+.todo-input {
+  font: inherit;
+  padding: 0rem 0.5rem;
+  border: 1px solid transparent;
+  outline: none;
+  transition: border-color 0.15s ease-in-out;
+}
+
+[class$="-todo-button"] {
+  font: inherit;
+  padding: 0rem 0.5rem;
+  border: 1px solid transparent;
+  outline: none;
+  transition: border-color 0.15s ease-in-out, background-color 0.15s ease-in-out;
+  cursor: pointer;
+  background-color: var(--bg-300);
+}
+
+[class$="-todo-button"]:hover {
+  background-color: var(--bg-200);
+}
+
+[class$="button"]:focus-visible,
+.todo-input:focus-visible {
+  border-color: var(--accent-400);
+}
+
+[class$="-todo-button"]:focus-visible {
+  background-color: var(--bg-200);
+}
+
+.todo-form {
+  display: flex;
+  box-shadow: var(--shadow);
+}
+
+.todo-input {
+  width: 100%;
+  padding: 0rem var(--spacing-500);
+  font: inherit;
+  background-color: inherit;
+  border-radius: var(--radius-400) 0rem 0rem var(--radius-400);
+}
+
+.add-todo-button {
+  background-color: var(--bg-300);
+  border-radius: 0rem var(--radius-400) var(--radius-400) 0rem;
+}
