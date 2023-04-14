@@ -7,6 +7,15 @@
   background-color: var(--bg-400);
   position: absolute;
   top: var(--top);
+  transition: top var(--transition);
+  transform: translateY(-100%);
+  animation: inAnimation var(--transition) forwards;
+}
+
+@keyframes inAnimation {
+  100% {
+    transform: translateY(0%);
+  }
 }
 
 /* checkbox */

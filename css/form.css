@@ -32,17 +32,19 @@
 .todo-form {
   display: flex;
   box-shadow: var(--shadow);
+  position: relative;
+  z-index: 200;
 }
 
 .todo-input {
   width: 100%;
   padding: 0rem var(--spacing-500);
   font: inherit;
-  background-color: inherit;
+  background-color: var(--bg-300);
   border-radius: var(--radius-400) 0rem 0rem var(--radius-400);
 }
 
 .add-todo-button {
-  background-color: var(--bg-300);
+  background-color: var(--bg-200);
   border-radius: 0rem var(--radius-400) var(--radius-400) 0rem;
 }

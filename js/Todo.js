@@ -6,6 +6,5 @@ export class Todo {
     this.order = 0
     this.done = false
     this.elements = createTodoElement(content)
-    console.log(this.elements.li)
   }
 }

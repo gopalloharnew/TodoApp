@@ -50,7 +50,10 @@ main {
 .todo-wraper {
   position: relative;
   list-style: none;
-  height: var(--height);
+  height: var(--height, 0px);
+  margin-top: var(--spacing-500);
+  transition: height var(--transition);
+  z-index: 100;
 }
 
 .list-action-button-wraper {
