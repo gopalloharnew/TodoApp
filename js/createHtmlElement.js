@@ -13,17 +13,19 @@ function createHtmlElement(options) {
 
   if (options.children) {
     if (Array.isArray(options.children)) {
-      for (let child of options.children) {
-        elem.append(child)
-      }
+      elem.append(...options.children)
     } else {
       elem.append(options.children)
     }
   }
+
+  if (options.id) {
+    elem.id = options.id
+  }
   return elem
 }
 
-export function createTodoElement(content) {
+export function createTodoElement(todo) {
   let obj = {}
   obj.checkbox = createHtmlElement({
     type: "button",
@@ -33,7 +35,7 @@ export function createTodoElement(content) {
   obj.contentWraper = createHtmlElement({
     type: "div",
     classList: "todo-content",
-    children: content,
+    children: todo.content,
   })
 
   obj.editButton = createHtmlElement({
@@ -57,6 +59,7 @@ export function createTodoElement(content) {
   obj.li = createHtmlElement({
     type: "li",
     classList: "todo",
+    id: todo.id,
     children: [obj.checkbox, obj.contentWraper, obj.actionButtonWraper],
   })
 
