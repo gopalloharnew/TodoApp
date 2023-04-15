@@ -1,5 +1,5 @@
 import { Todo } from "./Todo.js"
-import { createTodoElement } from "./CreateHtmlElement.js"
+import { createTodoElement } from "./createHtmlElement.js"
 
 const todoForm = document.querySelector(".todo-form")
 const todoInput = document.querySelector(".todo-input")
@@ -113,14 +113,6 @@ function placeTodo() {
   doneTodoDisplay.textContent = addLeadingZero(
     todoArray.filter((todo) => todo.done).length
   )
-  //   newArray = todoArray.filter((todo) => {
-  //     return !todo.done
-  //   })
-  //   break
-  // case "pending":
-  //   newArray = todoArray.filter((todo) => {
-  //     return todo.done
-  //   })
   setTop(spacing)
   setLocalTodo()
 }
