@@ -174,13 +174,19 @@ todoForm.addEventListener("submit", (e) => {
 })
 
 clearAllTodoButton.addEventListener("click", () => {
-  clearTodo("all")
+  if (confirm("clear all todo")) {
+    clearTodo("all")
+  }
 })
 
 clearDoneTodoButton.addEventListener("click", () => {
-  clearTodo("done")
+  if (confirm("clear done todo")) {
+    clearTodo("done")
+  }
 })
 
 clearPendingTodoButton.addEventListener("click", () => {
-  clearTodo("pending")
+  if (confirm("clear done todo")) {
+    clearTodo("pending")
+  }
 })
