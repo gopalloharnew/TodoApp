@@ -50,7 +50,7 @@ function populateTodo(todo, prepend = true) {
     editTodo(todo, elements)
   })
   elements.checkbox.addEventListener("click", () => {
-    doUndo(todo, elements.li)
+    doUndo(todo, elements)
   })
   if (prepend) {
     todoWraper.prepend(elements.li)
@@ -65,31 +65,36 @@ function deleteTodo(todo, li) {
   placeTodo()
 }
 
+function saveTodo(todo, elements) {
+  todo.editing = false
+  elements.contentWraper.contentEditable = false
+  elements.editButton.textContent = "Edit"
+  todo.content = elements.contentWraper.textContent
+  resizeObserver.disconnect()
+  placeTodo()
+}
+
 function editTodo(todo, elements) {
   if (!todo.editing) {
     todo.editing = true
     elements.contentWraper.contentEditable = true
     elements.contentWraper.focus()
-    elements.editButton.textContent = "save"
+    elements.editButton.textContent = "Save"
     resizeObserver.observe(elements.li)
-  } else {
-    todo.editing = false
-    elements.contentWraper.contentEditable = false
-    elements.editButton.textContent = "edit"
-    todo.content = elements.contentWraper.textContent
-    resizeObserver.disconnect()
-    placeTodo()
+    return
   }
+  saveTodo(todo, elements)
 }
 
-function doUndo(todo, li) {
+function doUndo(todo, elements) {
   if (!todo.done) {
     todo.done = true
+    if (todo.editing) saveTodo(todo, elements)
   } else {
     todo.done = false
   }
 
-  li.classList.toggle("done", todo.done)
+  elements.li.classList.toggle("done", todo.done)
   placeTodo()
 }
 
